@@ -37,16 +37,16 @@
   #canvas{position:fixed;inset:0;z-index:0;pointer-events:none}
 
   .rail{
-    position:fixed;left:50%;bottom:max(14px,env(safe-area-inset-bottom));
-    transform:translateX(-50%);z-index:5;
-    display:flex;align-items:center;gap:16px;
+    position:fixed;left:max(18px,env(safe-area-inset-left));top:50%;
+    transform:translateY(-50%);z-index:5;
+    writing-mode:vertical-rl;
+    display:flex;align-items:center;gap:18px;
     font-family:'Cormorant Garamond',serif;font-style:italic;
-    letter-spacing:.3em;text-transform:lowercase;white-space:nowrap;
+    letter-spacing:.35em;text-transform:lowercase;
     color:var(--muted);font-size:clamp(10px,1.4vw,13px);
     opacity:0;animation:fadeRail 2.4s ease 2.8s forwards;
-    pointer-events:none;
   }
-  .rail .line{width:60px;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent)}
+  .rail .line{width:1px;height:110px;background:linear-gradient(180deg,transparent,var(--gold),transparent)}
   @keyframes fadeRail{to{opacity:.85}}
 
   #gate{
@@ -163,9 +163,8 @@
   .reveal{opacity:0;transform:translateY(40px);transition:opacity 1.2s ease, transform 1.2s ease}
   .reveal.in{opacity:1;transform:translateY(0)}
 
-  .end-sec{min-height:0;padding-top:110px;padding-bottom:130px}
-
   @media (max-width:640px){
+    .rail{display:none}
     section{padding:90px 18px}
   }
 </style>
@@ -208,7 +207,7 @@
     <p class="promise reveal">Not just today. Not just until we are okay again. Every single heartbeat, it is you.</p>
   </section>
 
-  <section class="end-sec">
+  <section>
     <div class="sig">— Saqib</div>
     <div class="sig-label">yours, always</div>
     <div class="forever">forever &amp; always</div>
